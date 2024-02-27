@@ -33,3 +33,8 @@
 	url = https://github.com/zlib-ng/zlib-ng.git
 	shallow = true
 
+[submodule "Externals/libspng/libspng"]
+	path = Externals/libspng/libspng
+	url = https://github.com/randy408/libspng.git
+	branch = master
+	shallow = true
