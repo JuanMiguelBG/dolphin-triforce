@@ -32,3 +32,5 @@
 	path = Externals/zlib-ng/zlib-ng
 	url = https://github.com/zlib-ng/zlib-ng.git
 	shallow = true
+[submodule "Externals/libspng/libspng"]
+	shallow = true
