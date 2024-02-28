@@ -38,3 +38,7 @@
 	url = https://github.com/randy408/libspng.git
 	branch = master
 	shallow = true
+[submodule "Externals/VulkanMemoryAllocator"]
+	path = Externals/VulkanMemoryAllocator
+	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+	shallow = true
