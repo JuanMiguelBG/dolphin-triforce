@@ -42,3 +42,8 @@
 	path = Externals/VulkanMemoryAllocator
 	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
 	shallow = true
+[submodule "Externals/cubeb/cubeb"]
+	path = Externals/cubeb/cubeb
+	url = https://github.com/mozilla/cubeb.git
+	branch = master
+	shallow = true
