@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Dolphin Emulator Project
+ * Copyright 2014 Dolphin Triforce Emulator Project
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
@@ -99,7 +99,7 @@ public final class DirectoryInitialization
     if (externalPath == null)
       return null;
 
-    return new File(externalPath, "dolphin-emu");
+    return new File(externalPath, "dolphin-triforce");
   }
 
   private static boolean setDolphinUserDirectory(Context context)

@@ -1,4 +1,4 @@
-// Copyright 2014 Dolphin Emulator Project
+// Copyright 2014 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 /* $VER: ppc_disasm.h V1.6 (09.12.2011)

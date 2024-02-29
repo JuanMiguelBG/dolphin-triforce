@@ -69,7 +69,7 @@ Good enough for Zelda ucode games (and maybe some AX too):
 - GC: Mario Kart Double Dash, Luigi Mansion, Super Mario Sunshine, Pikmin 1/2, Zelda WW, Zelda TP, ...
 
 Basically... If game is not using coef and irom mixing functions it will work ok.
-Dolphin emulator will report wrong CRCs, but it will work ok with mentioned games.
+Dolphin Triforce emulator will report wrong CRCs, but it will work ok with mentioned games.
 
 LM
 31/july/2011

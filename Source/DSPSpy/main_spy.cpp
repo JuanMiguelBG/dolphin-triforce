@@ -1,4 +1,4 @@
-// Copyright 2009 Dolphin Emulator Project
+// Copyright 2009 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 // This is a test program for running code on the Wii DSP, with full control over input

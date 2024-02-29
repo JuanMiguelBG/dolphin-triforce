@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -79,7 +79,7 @@ enum class EFBCopyFormat
   //        the results one would expect when copying from the depth buffer with this format.
   //        For reference: When copying from the depth buffer, R should receive the top 8 bits of
   //                       the Z value, and A should be either 0xFF or 0 (please investigate).
-  //        Please test original hardware and make sure dolphin-emu implements this format
+  //        Please test original hardware and make sure dolphin-triforce implements this format
   //        correctly.
   RA8 = 0x3,  // RA8, IA8, (FIXME: Z16 too?)
 

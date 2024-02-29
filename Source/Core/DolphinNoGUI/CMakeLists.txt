@@ -1,4 +1,4 @@
-add_executable(dolphin-nogui
+add_executable(dolphin-triforce-nogui
   Platform.cpp
   Platform.h
   PlatformHeadless.cpp
@@ -6,20 +6,20 @@ add_executable(dolphin-nogui
 )
 
 if(ENABLE_X11 AND X11_FOUND)
-  target_sources(dolphin-nogui PRIVATE PlatformX11.cpp)
+  target_sources(dolphin-triforce-nogui PRIVATE PlatformX11.cpp)
 endif()
 
 if(WIN32)
-  target_sources(dolphin-nogui PRIVATE PlatformWin32.cpp)
+  target_sources(dolphin-triforce-nogui PRIVATE PlatformWin32.cpp)
 endif()
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-  target_sources(dolphin-nogui PRIVATE PlatformFBDev.cpp)
+  target_sources(dolphin-triforce-nogui PRIVATE PlatformFBDev.cpp)
 endif()
 
-set_target_properties(dolphin-nogui PROPERTIES OUTPUT_NAME dolphin-emu-nogui)
+set_target_properties(dolphin-triforce-nogui PROPERTIES OUTPUT_NAME dolphin-triforce-nogui)
 
-target_link_libraries(dolphin-nogui
+target_link_libraries(dolphin-triforce-nogui
 PRIVATE
   core
   uicommon
@@ -28,13 +28,13 @@ PRIVATE
 
 if(MSVC)
   # Add precompiled header
-  target_link_libraries(dolphin-nogui PRIVATE use_pch)
+  target_link_libraries(dolphin-triforce-nogui PRIVATE use_pch)
 endif()
 
 if(USE_DISCORD_PRESENCE)
-  target_compile_definitions(dolphin-nogui PRIVATE -DUSE_DISCORD_PRESENCE)
+  target_compile_definitions(dolphin-triforce-nogui PRIVATE -DUSE_DISCORD_PRESENCE)
 endif()
 
-set(CPACK_PACKAGE_EXECUTABLES ${CPACK_PACKAGE_EXECUTABLES} dolphin-nogui)
-install(TARGETS dolphin-nogui RUNTIME DESTINATION ${bindir})
+set(CPACK_PACKAGE_EXECUTABLES ${CPACK_PACKAGE_EXECUTABLES} dolphin-triforce-nogui)
+install(TARGETS dolphin-triforce-nogui RUNTIME DESTINATION ${bindir})
 

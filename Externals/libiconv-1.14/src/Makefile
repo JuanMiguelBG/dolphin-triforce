@@ -40,7 +40,7 @@ mkinstalldirs = $(SHELL) ../build-aux/mkinstalldirs
 # Programs used by "make install-strip":
 STRIP = /usr/bin/strip
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-install_sh = ${SHELL} /home/sonicadvance1/dolphin-emu/Externals/libiconv-1.14/build-aux/install-sh
+install_sh = ${SHELL} /home/sonicadvance1/dolphin-triforce/Externals/libiconv-1.14/build-aux/install-sh
 
 #### End of system configuration section. ####
 

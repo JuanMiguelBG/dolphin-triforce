@@ -1,4 +1,4 @@
-// Copyright 2017 Dolphin Emulator Project
+// Copyright 2017 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #ifdef USE_UPNP
@@ -135,7 +135,7 @@ static bool MapPort(const char* addr, const u16 port)
   std::string port_str = std::to_string(port);
   int result = UPNP_AddPortMapping(
       s_urls.controlURL, s_data.first.servicetype, port_str.c_str(), port_str.c_str(), addr,
-      (std::string("dolphin-emu UDP on ") + addr).c_str(), "UDP", nullptr, nullptr);
+      (std::string("dolphin-triforce UDP on ") + addr).c_str(), "UDP", nullptr, nullptr);
 
   if (result != 0)
     return false;

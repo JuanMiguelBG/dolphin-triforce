@@ -1,4 +1,4 @@
-// Copyright 2017 Dolphin Emulator Project
+// Copyright 2017 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 // Implementation of an IOSC-like API, but much simpler since we only support actual keys.

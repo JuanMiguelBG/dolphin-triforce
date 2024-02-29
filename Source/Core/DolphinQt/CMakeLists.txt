@@ -24,7 +24,7 @@ message(STATUS "Found Qt version ${QT_VERSION}")
 
 set_property(TARGET Qt${QT_VERSION_MAJOR}::Core PROPERTY INTERFACE_COMPILE_FEATURES "")
 
-add_executable(dolphin-emu
+add_executable(dolphin-triforce
   AboutDialog.cpp
   AboutDialog.h
   CheatSearchFactoryWidget.cpp
@@ -352,26 +352,26 @@ add_executable(dolphin-emu
 )
 
 if (NOT WIN32)
-  target_sources(dolphin-emu PRIVATE
+  target_sources(dolphin-triforce PRIVATE
     QtUtils/SignalDaemon.cpp
     QtUtils/SignalDaemon.h
   )
 endif()
 
-target_compile_definitions(dolphin-emu
+target_compile_definitions(dolphin-triforce
 PRIVATE
   -DQT_USE_QSTRINGBUILDER
   -DQT_NO_CAST_FROM_ASCII
   -DQT_NO_CAST_TO_ASCII
 )
 
-target_include_directories(dolphin-emu
+target_include_directories(dolphin-triforce
 PRIVATE
   ${CMAKE_CURRENT_BINARY_DIR}
   ${Qt${QT_VERSION_MAJOR}Gui_PRIVATE_INCLUDE_DIRS}
 )
 
-target_link_libraries(dolphin-emu
+target_link_libraries(dolphin-triforce
 PRIVATE
   core
   Qt${QT_VERSION_MAJOR}::Widgets
@@ -381,7 +381,7 @@ PRIVATE
 )
 
 if (WIN32)
-  target_link_libraries(dolphin-emu
+  target_link_libraries(dolphin-triforce
   PRIVATE
     gdi32.lib
     shell32.lib
@@ -395,17 +395,17 @@ if (MSVC)
   list(TRANSFORM Qt6Gui_INCLUDE_DIRS PREPEND "/external:I" OUTPUT_VARIABLE qtGui)
   list(TRANSFORM Qt6Gui_PRIVATE_INCLUDE_DIRS PREPEND "/external:I" OUTPUT_VARIABLE qtGuiPriv)
   list(TRANSFORM Qt6Widgets_PRIVATE_INCLUDE_DIRS PREPEND "/external:I" OUTPUT_VARIABLE qtWidgetsPriv)
-  target_compile_options(dolphin-emu PRIVATE "${qtGui}")
-  target_compile_options(dolphin-emu PRIVATE "${qtGuiPriv}")
-  target_compile_options(dolphin-emu PRIVATE "${qtWidgets}")
+  target_compile_options(dolphin-triforce PRIVATE "${qtGui}")
+  target_compile_options(dolphin-triforce PRIVATE "${qtGuiPriv}")
+  target_compile_options(dolphin-triforce PRIVATE "${qtWidgets}")
 
   # Qt 6.3.0 headers use std::aligned_storage instead of alignas
-  target_compile_definitions(dolphin-emu PRIVATE _SILENCE_CXX23_ALIGNED_STORAGE_DEPRECATION_WARNING)
+  target_compile_definitions(dolphin-triforce PRIVATE _SILENCE_CXX23_ALIGNED_STORAGE_DEPRECATION_WARNING)
 
   if ("${QT_VERSION_MAJOR}" GREATER_EQUAL 6)
     # Qt6 requires RTTI
-    remove_cxx_flag_from_target(dolphin-emu "/GR-")
-    target_compile_options(dolphin-emu PRIVATE "/GR")
+    remove_cxx_flag_from_target(dolphin-triforce "/GR-")
+    target_compile_options(dolphin-triforce PRIVATE "/GR")
   else()
     # Add precompiled header
     target_link_libraries(audiocommon PRIVATE use_pch)
@@ -413,31 +413,31 @@ if (MSVC)
 endif()
 
 if(WIN32)
-  target_sources(dolphin-emu PRIVATE DolphinQt.manifest DolphinQt.rc)
+  target_sources(dolphin-triforce PRIVATE DolphinQt.manifest DolphinQt.rc)
 
-  set_target_properties(dolphin-emu PROPERTIES
+  set_target_properties(dolphin-triforce PROPERTIES
     DEBUG_POSTFIX    D
     OUTPUT_NAME      Dolphin
     WIN32_EXECUTABLE TRUE
   )
 
   # Copy Sys dir
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/Data/Sys" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Sys"
   )
 
   # Copy COPYING
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_SOURCE_DIR}/COPYING" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/COPYING"
   )
 
   # Copy Licenses dir
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/LICENSES" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Licenses"
   )
 
   # Copy qt.conf
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/qt.conf.win" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/qt.conf"
   )
 
@@ -467,7 +467,7 @@ if(WIN32)
   #       means proper path variables will not be set up, thus the need to ensure they're
   #       always set up.
   #
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND "${CMAKE_COMMAND}" -E env PATH="${QT_BINARY_DIRECTORY}"
             "${WINDEPLOYQT_EXE}" --libdir="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}"
                                  --plugindir="${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/QtPlugins"
@@ -477,7 +477,7 @@ if(WIN32)
                                  --no-system-d3d-compiler
                                  "${NO_ANGLE_PARAM}"
                                  --no-opengl-sw
-                                 "$<TARGET_FILE:dolphin-emu>"
+                                 "$<TARGET_FILE:dolphin-triforce>"
   )
 endif()
 
@@ -490,10 +490,10 @@ if(WIN32 AND NOT Gettext_FOUND)
 endif()
 
 if(GETTEXT_MSGFMT_EXECUTABLE)
-  set(pot_file "${CMAKE_SOURCE_DIR}/Languages/po/dolphin-emu.pot")
+  set(pot_file "${CMAKE_SOURCE_DIR}/Languages/po/dolphin-triforce.pot")
   file(GLOB LINGUAS ${CMAKE_SOURCE_DIR}/Languages/po/*.po)
 
-  target_sources(dolphin-emu PRIVATE ${pot_file} ${LINGUAS})
+  target_sources(dolphin-triforce PRIVATE ${pot_file} ${LINGUAS})
   source_group("Localization" FILES ${LINGUAS})
   source_group("Localization\\\\Generated" FILES ${pot_file})
 
@@ -504,10 +504,10 @@ if(GETTEXT_MSGFMT_EXECUTABLE)
       set(mo ${mo_dir}/${lang}.mo)
     else()
       set(mo_dir ${CMAKE_CURRENT_BINARY_DIR}/${lang})
-      set(mo ${mo_dir}/dolphin-emu.mo)
+      set(mo ${mo_dir}/dolphin-triforce.mo)
     endif()
 
-    target_sources(dolphin-emu PRIVATE ${mo})
+    target_sources(dolphin-triforce PRIVATE ${mo})
     source_group("Localization\\\\Generated" FILES ${mo})
 
     if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
@@ -538,7 +538,7 @@ if(APPLE)
   set(BUNDLE_PATH ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Dolphin.app)
 
   # Ask for an application bundle.
-  set_target_properties(dolphin-emu PROPERTIES
+  set_target_properties(dolphin-triforce PROPERTIES
     MACOSX_BUNDLE true
     MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.in
     XCODE_ATTRIBUTE_CODE_SIGN_ENTITLEMENTS "${CMAKE_CURRENT_SOURCE_DIR}/DolphinEmu.entitlements"
@@ -547,11 +547,11 @@ if(APPLE)
     )
 
   # Copy qt.conf into the bundle
-  target_sources(dolphin-emu PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/qt.conf")
+  target_sources(dolphin-triforce PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/qt.conf")
   set_source_files_properties("${CMAKE_CURRENT_SOURCE_DIR}/qt.conf" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 
   # Copy icon into the bundle
-  target_sources(dolphin-emu PRIVATE "${CMAKE_SOURCE_DIR}/Data/Dolphin.icns")
+  target_sources(dolphin-triforce PRIVATE "${CMAKE_SOURCE_DIR}/Data/Dolphin.icns")
   set_source_files_properties("${CMAKE_SOURCE_DIR}/Data/Dolphin.icns" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 
   # Plugins have to be manually included with Qt 6
@@ -562,18 +562,18 @@ if(APPLE)
 
   # Copy Qt plugins into the bundle
   get_target_property(qtcocoa_location Qt${QT_VERSION_MAJOR}::QCocoaIntegrationPlugin LOCATION)
-  target_sources(dolphin-emu PRIVATE "${qtcocoa_location}")
+  target_sources(dolphin-triforce PRIVATE "${qtcocoa_location}")
   set_source_files_properties("${qtcocoa_location}" PROPERTIES MACOSX_PACKAGE_LOCATION MacOS/platforms)
 
   get_target_property(qtmacstyle_location Qt${QT_VERSION_MAJOR}::QMacStylePlugin LOCATION)
-  target_sources(dolphin-emu PRIVATE "${qtmacstyle_location}")
+  target_sources(dolphin-triforce PRIVATE "${qtmacstyle_location}")
   set_source_files_properties("${qtmacstyle_location}" PROPERTIES MACOSX_PACKAGE_LOCATION MacOS/styles)
 
   # Copy resources into the bundle
   set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/Data/Sys")
   file(GLOB_RECURSE resources RELATIVE "${CMAKE_SOURCE_DIR}/Data" "${CMAKE_SOURCE_DIR}/Data/Sys/*")
   foreach(res ${resources})
-    target_sources(dolphin-emu PRIVATE "${CMAKE_SOURCE_DIR}/Data/${res}")
+    target_sources(dolphin-triforce PRIVATE "${CMAKE_SOURCE_DIR}/Data/${res}")
     get_filename_component(resdir "${res}" DIRECTORY)
     set_source_files_properties("${CMAKE_SOURCE_DIR}/Data/${res}" PROPERTIES
       MACOSX_PACKAGE_LOCATION "Resources/${resdir}")
@@ -583,16 +583,16 @@ if(APPLE)
   # Copy MoltenVK into the bundle
   if(ENABLE_VULKAN)
     if(USE_BUNDLED_MOLTENVK)
-      add_dependencies(dolphin-emu MoltenVK)
+      add_dependencies(dolphin-triforce MoltenVK)
       ExternalProject_Get_Property(MoltenVK SOURCE_DIR)
-      target_sources(dolphin-emu PRIVATE "${SOURCE_DIR}/Package/Release/MoltenVK/dylib/macOS/libMoltenVK.dylib")
+      target_sources(dolphin-triforce PRIVATE "${SOURCE_DIR}/Package/Release/MoltenVK/dylib/macOS/libMoltenVK.dylib")
       set_source_files_properties("${SOURCE_DIR}/Package/Release/MoltenVK/dylib/macOS/libMoltenVK.dylib" PROPERTIES MACOSX_PACKAGE_LOCATION Frameworks GENERATED ON)
     else()
       find_file(MOLTENVK_DYLIB NAMES libMoltenVK.dylib PATH_SUFFIXES lib)
       if(NOT MOLTENVK_DYLIB)
         message(FATAL_ERROR "Couldn't find libMoltenVK.dylib.  Enable USE_BUNDLED_MOLTENVK?")
       endif()
-      target_sources(dolphin-emu PRIVATE ${MOLTENVK_DYLIB})
+      target_sources(dolphin-triforce PRIVATE ${MOLTENVK_DYLIB})
       set_source_files_properties(${MOLTENVK_DYLIB} PROPERTIES MACOSX_PACKAGE_LOCATION Frameworks)
     endif()
   endif()
@@ -600,57 +600,57 @@ if(APPLE)
   if(NOT SKIP_POSTPROCESS_BUNDLE)
     # Update library references to make the bundle portable
     include(DolphinPostprocessBundle)
-    dolphin_postprocess_bundle(dolphin-emu)
+    dolphin_postprocess_bundle(dolphin-triforce)
     # Fix rpath
-    add_custom_command(TARGET dolphin-emu
+    add_custom_command(TARGET dolphin-triforce
       POST_BUILD COMMAND
       ${CMAKE_INSTALL_NAME_TOOL} -add_rpath "@executable_path/../Frameworks/"
-      $<TARGET_FILE:dolphin-emu>)
+      $<TARGET_FILE:dolphin-triforce>)
   endif()
 
   if(MACOS_CODE_SIGNING)
     # Code sign make file builds
-    add_custom_command(TARGET dolphin-emu
+    add_custom_command(TARGET dolphin-triforce
       POST_BUILD COMMAND
       /usr/bin/codesign -f -s "${MACOS_CODE_SIGNING_IDENTITY}" --deep --options=runtime --entitlements "${CMAKE_SOURCE_DIR}/Source/Core/DolphinQt/DolphinEmu$<$<CONFIG:Debug>:Debug>.entitlements" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Dolphin.app" || true)
 
     # Code sign builds for build systems that do have release/debug variants (Xcode)
-    add_custom_command(TARGET dolphin-emu
+    add_custom_command(TARGET dolphin-triforce
       POST_BUILD COMMAND
       /usr/bin/codesign -f -s "${MACOS_CODE_SIGNING_IDENTITY}" --deep --options=runtime --entitlements "${CMAKE_SOURCE_DIR}/Source/Core/DolphinQt/DolphinEmuDebug.entitlements" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG}/Dolphin.app" || true)
 
-    add_custom_command(TARGET dolphin-emu
+    add_custom_command(TARGET dolphin-triforce
       POST_BUILD COMMAND
       /usr/bin/codesign -f -s "${MACOS_CODE_SIGNING_IDENTITY}" --deep --options=runtime --entitlements "${CMAKE_SOURCE_DIR}/Source/Core/DolphinQt/DolphinEmu.entitlements" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE}/Dolphin.app" || true)
   endif()
 else()
-  install(TARGETS dolphin-emu RUNTIME DESTINATION ${bindir})
+  install(TARGETS dolphin-triforce RUNTIME DESTINATION ${bindir})
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux" AND STEAM)
   # Set that we want ORIGIN in FLAGS.
   # We also want RPATH, not RUNPATH, so disable the new tags.
-  target_link_options(dolphin-emu
+  target_link_options(dolphin-triforce
   PRIVATE
     LINKER:-z,origin
     LINKER:--disable-new-dtags
   )
 
   # For Steam Runtime builds, our Qt shared libraries will be in a "lib" folder.
-  set_target_properties(dolphin-emu PROPERTIES
+  set_target_properties(dolphin-triforce PROPERTIES
     BUILD_WITH_INSTALL_RPATH true
     INSTALL_RPATH "\$ORIGIN/lib"
   )
 
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/lib"
     COMMAND cp -P "${QT_DIR}/../../*.so*" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/lib"
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${QT_DIR}/../../../plugins/platforms" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/platforms"
   )
 
   # Copy qt.conf
-  target_sources(dolphin-emu PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/qt.conf")
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  target_sources(dolphin-triforce PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/qt.conf")
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/qt.conf" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/qt.conf"
   )
 
@@ -658,18 +658,18 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Linux" AND STEAM)
   set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/Data/Sys")
   file(GLOB_RECURSE resources RELATIVE "${CMAKE_SOURCE_DIR}/Data" "${CMAKE_SOURCE_DIR}/Data/Sys/*")
   foreach(res ${resources})
-    target_sources(dolphin-emu PRIVATE "${CMAKE_SOURCE_DIR}/Data/${res}")
+    target_sources(dolphin-triforce PRIVATE "${CMAKE_SOURCE_DIR}/Data/${res}")
     source_group("Resources" FILES "${CMAKE_SOURCE_DIR}/Data/${res}")
   endforeach()
 
   # Copy Sys folder
-  add_custom_command(TARGET dolphin-emu POST_BUILD
+  add_custom_command(TARGET dolphin-triforce POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/Data/Sys" "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Sys"
   )
 endif()
 
 if(USE_MGBA)
-  target_sources(dolphin-emu PRIVATE
+  target_sources(dolphin-triforce PRIVATE
     GBAHost.cpp
     GBAHost.h
     GBAWidget.cpp
@@ -678,5 +678,5 @@ if(USE_MGBA)
 endif()
 
 if(USE_DISCORD_PRESENCE)
-  target_compile_definitions(dolphin-emu PRIVATE -DUSE_DISCORD_PRESENCE)
+  target_compile_definitions(dolphin-triforce PRIVATE -DUSE_DISCORD_PRESENCE)
 endif()

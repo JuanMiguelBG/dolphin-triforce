@@ -1,4 +1,4 @@
-// Copyright 2003 Dolphin Emulator Project
+// Copyright 2003 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <EGL/egl.h>

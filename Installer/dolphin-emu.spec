@@ -1,5 +1,5 @@
 #
-# Spec file for package Dolphin Emulator
+# Spec file for package Dolphin Triforce Emulator
 #
 # Copyright © 2014 Markus S. <kamikazow@web.de>
 #
@@ -16,8 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-Name:       dolphin-emu
-Summary:    Dolphin Emulator
+Name:       dolphin-triforce
+Summary:    Dolphin Triforce Emulator
 Version:    5.0
 Release:    0%{?dist}
 Group:      System/Emulators/Other
@@ -25,8 +25,8 @@ License:    GPL-2.0
 URL:        https://dolphin-emu.org/
 BuildArch:  x86_64 armv7l aarch64
 
-# For this spec file to work, the Dolphin Emulator sources must be located
-# in a directory named dolphin-emu-5.0 (with "5.0" being the version
+# For this spec file to work, the Dolphin Triforce Emulator sources must be located
+# in a directory named dolphin-triforce-5.0 (with "5.0" being the version
 # number defined above).
 # If the sources are compressed in another format than .tar.xz, change the
 # file extension accordingly.
@@ -85,25 +85,25 @@ enhancements such as compatibility with all PC controllers, turbo speed,
 networked multiplayer, and more.
 Most games run perfectly or with minor bugs.
 
-# ------------------------------------------------------
+# ---------------------------------------------------------------
 
 %package lang
-Summary:        Translations for Dolphin Emulator
+Summary:        Translations for Dolphin Triforce Emulator
 BuildArch:      noarch
 
 %description lang
-Translations into various languages for Dolphin Emulator
+Translations into various languages for Dolphin Triforce Emulator
 
 %files lang
 %{_datadir}/locale
 
-# ------------------------------------------------------
+# ---------------------------------------------------------------
 
 %package nogui
-Summary:        Dolphin Emulator without a graphical user interface
+Summary:        Dolphin Triforce Emulator without a graphical user interface
 
 %description nogui
-Dolphin Emulator without a graphical user interface
+Dolphin Triforce Emulator without a graphical user interface
 
 %files nogui
 %{_bindir}/%{name}-nogui

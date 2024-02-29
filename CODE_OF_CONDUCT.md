@@ -1,4 +1,4 @@
-# Dolphin Emulator Code of Conduct
+# Dolphin Triforce Emulator Code of Conduct
 
 Like many Open Source projects and the greater FLOSS community, Dolphin is a
 collaborative open source community comprised of a diverse group of

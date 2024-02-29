@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 // This file is UGLY (full of #ifdef) so that it can be used with both GC and

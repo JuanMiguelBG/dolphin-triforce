@@ -1,4 +1,4 @@
-// Copyright 2017 Dolphin Emulator Project
+// Copyright 2017 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "DolphinQt/Translation.h"
@@ -280,12 +280,12 @@ static bool TryInstallTranslator(const QString& exact_language_code)
 #if defined _WIN32
         fmt::format("{}/Languages/{}.mo", File::GetExeDirectory(), lang)
 #elif defined __APPLE__
-        fmt::format("{}/Contents/Resources/{}.lproj/dolphin-emu.mo", File::GetBundleDirectory(),
+        fmt::format("{}/Contents/Resources/{}.lproj/dolphin-triforce.mo", File::GetBundleDirectory(),
                     lang)
 #elif defined LINUX_LOCAL_DEV
-        fmt::format("{}/../Source/Core/DolphinQt/{}/dolphin-emu.mo", File::GetExeDirectory(), lang)
+        fmt::format("{}/../Source/Core/DolphinQt/{}/dolphin-triforce.mo", File::GetExeDirectory(), lang)
 #else
-        fmt::format("{}/../locale/{}/LC_MESSAGES/dolphin-emu.mo", DATA_DIR, lang)
+        fmt::format("{}/../locale/{}/LC_MESSAGES/dolphin-triforce.mo", DATA_DIR, lang)
 #endif
         ;
 

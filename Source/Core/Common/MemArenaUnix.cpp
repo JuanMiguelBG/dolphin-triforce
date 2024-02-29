@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Common/MemArena.h"
@@ -27,7 +27,7 @@ MemArena::~MemArena() = default;
 
 void MemArena::GrabSHMSegment(size_t size)
 {
-  const std::string file_name = "/dolphin-emu." + std::to_string(getpid());
+  const std::string file_name = "/dolphin-triforce." + std::to_string(getpid());
   m_shm_fd = shm_open(file_name.c_str(), O_RDWR | O_CREAT | O_EXCL, 0600);
   if (m_shm_fd == -1)
   {

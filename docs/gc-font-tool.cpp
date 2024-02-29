@@ -1,5 +1,5 @@
 // GameCube font tool
-// Copyright 2015 Dolphin Emulator Project
+// Copyright 2015 Dolphin Triforce Emulator Project
 // Copyright 2015 James Cowgill <james410@cowgill.org.uk>
 //
 // This program is free software; you can redistribute it and/or modify

@@ -1,4 +1,4 @@
-// Copyright 2012 Dolphin Emulator Project
+// Copyright 2012 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "VideoBackends/OGL/OGLPerfQuery.h"

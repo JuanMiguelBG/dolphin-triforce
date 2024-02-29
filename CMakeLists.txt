@@ -20,7 +20,7 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "10.14.0" CACHE STRING "")
 
 set(CMAKE_USER_MAKE_RULES_OVERRIDE "CMake/FlagsOverride.cmake")
 
-project(dolphin-emu)
+project(dolphin-triforce)
 
 if (MSVC)
   if (POLICY CMP0117)
@@ -133,9 +133,9 @@ include(RemoveCompileFlag)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Set up paths
-set(bindir  ${CMAKE_INSTALL_PREFIX}/bin               CACHE PATH "bindir")
-set(datadir ${CMAKE_INSTALL_PREFIX}/share/dolphin-emu CACHE PATH "datadir")
-set(mandir  ${CMAKE_INSTALL_PREFIX}/share/man         CACHE PATH "mandir")
+set(bindir  ${CMAKE_INSTALL_PREFIX}/bin                    CACHE PATH "bindir")
+set(datadir ${CMAKE_INSTALL_PREFIX}/share/dolphin-triforce CACHE PATH "datadir")
+set(mandir  ${CMAKE_INSTALL_PREFIX}/share/man              CACHE PATH "mandir")
 add_definitions(-DDATA_DIR="${datadir}/")
 
 if(CMAKE_SYSROOT)
@@ -1021,21 +1021,21 @@ if(NOT CMAKE_SYSTEM_NAME MATCHES "Linux|FreeBSD|OpenBSD|Darwin")
 endif()
 if(CMAKE_SYSTEM_NAME MATCHES "Linux|FreeBSD|OpenBSD")
   # Install the application icon and menu item
-  install(FILES Data/dolphin-emu.svg
+  install(FILES Data/dolphin-triforce.svg
           DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps)
-  install(FILES Data/dolphin-emu.png
+  install(FILES Data/dolphin-triforce.png
           DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps)
-  install(FILES Data/dolphin-emu.desktop
+  install(FILES Data/dolphin-triforce.desktop
           DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
   # Install manpages
-  install(FILES Data/dolphin-emu.6
+  install(FILES Data/dolphin-triforce.6
           DESTINATION ${mandir}/man6)
-  install(FILES Data/dolphin-emu-nogui.6
+  install(FILES Data/dolphin-triforce-nogui.6
           DESTINATION ${mandir}/man6)
 endif()
 
 # packaging information
-set(CPACK_PACKAGE_NAME "dolphin-emu")
+set(CPACK_PACKAGE_NAME "dolphin-triforce")
 set(CPACK_PACKAGE_VENDOR "Dolphin Team")
 set(CPACK_PACKAGE_VERSION_MAJOR ${DOLPHIN_VERSION_MAJOR})
 set(CPACK_PACKAGE_VERSION_MINOR ${DOLPHIN_VERSION_MINOR})

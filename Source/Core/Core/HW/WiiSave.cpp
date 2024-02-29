@@ -1,4 +1,4 @@
-// Copyright 2010 Dolphin Emulator Project
+// Copyright 2010 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 // Based off of tachtig/twintig http://git.infradead.org/?p=users/segher/wii.git

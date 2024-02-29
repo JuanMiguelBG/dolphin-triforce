@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // Copyright 2005 Duddie
 // SPDX-License-Identifier: GPL-2.0-or-later
 

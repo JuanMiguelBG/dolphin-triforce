@@ -1,4 +1,4 @@
-// Copyright 2015 Dolphin Emulator Project
+// Copyright 2015 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "VideoCommon/VertexLoaderX64.h"

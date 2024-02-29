@@ -36,7 +36,7 @@
       Text="## QtMocOverrideCpp @(QtMoc)" />
     <!--
       NOTE: This implementation was a template, which has been manually edited
-      for dolphin-emu specific behavior (carries over defines but not includes)
+      for dolphin-triforce specific behavior (carries over defines but not includes)
     -->
     <ItemGroup>
       <QtMoc>

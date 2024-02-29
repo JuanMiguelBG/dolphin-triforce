@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Core/IOS/Network/WD/Command.h"
@@ -357,7 +357,7 @@ std::optional<IPCReply> NetWDCommandDevice::IOCtlV(const IOCtlVRequest& request)
     for (int i = 0; i < BSSID_SIZE; ++i)
       bss->bssid[i] = i;
 
-    const char* ssid = "dolphin-emu";
+    const char* ssid = "dolphin-triforce";
     strcpy((char*)bss->ssid, ssid);
     bss->ssid_length = Common::swap16((u16)strlen(ssid));
 

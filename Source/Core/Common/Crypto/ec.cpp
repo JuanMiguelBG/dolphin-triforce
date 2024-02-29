@@ -1,4 +1,4 @@
-// Copyright 2010 Dolphin Emulator Project
+// Copyright 2010 Dolphin Triforce Emulator Project
 // Copyright 2007,2008  Segher Boessenkool  <segher@kernel.crashing.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 

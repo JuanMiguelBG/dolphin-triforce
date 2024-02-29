@@ -1,4 +1,4 @@
-// Copyright 2017 Dolphin Emulator Project
+// Copyright 2017 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Core/Config/NetplaySettings.h"
@@ -14,12 +14,12 @@ static constexpr u16 DEFAULT_LISTEN_PORT = 2626;
 // Main.NetPlay
 
 const Info<std::string> NETPLAY_TRAVERSAL_SERVER{{System::Main, "NetPlay", "TraversalServer"},
-                                                 "stun.dolphin-emu.org"};
+                                                 "stun.dolphin-triforce.org"};
 const Info<u16> NETPLAY_TRAVERSAL_PORT{{System::Main, "NetPlay", "TraversalPort"}, 6262};
 const Info<std::string> NETPLAY_TRAVERSAL_CHOICE{{System::Main, "NetPlay", "TraversalChoice"},
                                                  "direct"};
 const Info<std::string> NETPLAY_INDEX_URL{{System::Main, "NetPlay", "IndexServer"},
-                                          "https://lobby.dolphin-emu.org"};
+                                          "https://lobby.dolphin-triforce.org"};
 
 const Info<bool> NETPLAY_USE_INDEX{{System::Main, "NetPlay", "UseIndex"}, false};
 const Info<std::string> NETPLAY_INDEX_NAME{{System::Main, "NetPlay", "IndexName"}, ""};

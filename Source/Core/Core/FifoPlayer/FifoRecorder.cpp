@@ -1,4 +1,4 @@
-// Copyright 2011 Dolphin Emulator Project
+// Copyright 2011 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Core/FifoPlayer/FifoRecorder.h"

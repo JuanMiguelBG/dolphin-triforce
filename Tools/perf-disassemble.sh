@@ -9,8 +9,8 @@
 #   kernel.yama.ptrace_scope = 0
 #
 # Example usage:
-# $ dolphin-emu -C Dolphin.Core.PerfMapDir=/tmp -b -e $game
-# $ perf top -p $(pidof dolphin-emu) --objdump ./Tools/perf-disassemble.sh -M intel
+# $ dolphin-triforce -C Dolphin.Core.PerfMapDir=/tmp -b -e $game
+# $ perf top -p $(pidof dolphin-triforce) --objdump ./Tools/perf-disassemble.sh -M intel
 
 flavor=att
 raw=r
@@ -47,4 +47,4 @@ do
     esac
     shift
 done
-gdb -q -p $(pidof dolphin-emu) -ex "set disassembly $flavor" -ex "disas /$raw$src $start,$stop" -ex q -batch
+gdb -q -p $(pidof dolphin-triforce) -ex "set disassembly $flavor" -ex "disas /$raw$src $start,$stop" -ex q -batch

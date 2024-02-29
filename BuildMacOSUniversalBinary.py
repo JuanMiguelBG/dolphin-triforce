@@ -39,7 +39,7 @@ DEFAULT_CONFIG = {
 
     # Location of destination universal binary
     "dst_app": "universal/",
-    # Build Target (dolphin-emu to just build the emulator and skip the tests)
+    # Build Target (dolphin-triforce to just build the emulator and skip the tests)
     "build_target": "ALL_BUILD",
 
     # Location for CMake to search for files (default is for homebrew)

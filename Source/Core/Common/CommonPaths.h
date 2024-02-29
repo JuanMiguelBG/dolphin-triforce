@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -11,7 +11,7 @@
 #define ROOT_DIR "."
 #ifdef _WIN32
 #define USERDATA_DIR "User"
-#define DOLPHIN_DATA_DIR "Dolphin"
+#define DOLPHIN_DATA_DIR "Dolphin-triforce"
 #elif defined __APPLE__
 // On OS X, USERDATA_DIR exists within the .app, but *always* reference
 // the copy in Application Support instead! (Copied on first run)
@@ -20,11 +20,11 @@
 #define DOLPHIN_DATA_DIR "Library/Application Support/Dolphin"
 #elif defined ANDROID
 #define USERDATA_DIR "user"
-#define DOLPHIN_DATA_DIR "/sdcard/dolphin-emu"
+#define DOLPHIN_DATA_DIR "/sdcard/dolphin-triforce"
 #define NOMEDIA_FILE ".nomedia"
 #else
 #define USERDATA_DIR "user"
-#define DOLPHIN_DATA_DIR "dolphin-emu"
+#define DOLPHIN_DATA_DIR "dolphin-triforce"
 #endif
 
 // Dirs in both User and Sys

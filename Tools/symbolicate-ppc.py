@@ -8,11 +8,11 @@
 #
 # $ perf record -t $tid
 # $ perf script | sed 's/.*cycles: *[0-9a-f]* *//' |
-#    python Tools/symbolicate-ppc.py ~/.dolphin-emu/Maps/${map}.map |
+#    python Tools/symbolicate-ppc.py ~/.dolphin-triforce/Maps/${map}.map |
 #    rankor -r | head
 #  10.05% JIT_Loop (/tmp/perf-15936.map)
 #   3.73% [unknown] (/tmp/perf-15936.map)
-#   1.91% VideoBackendHardware::Video_GatherPipeBursted (/opt/dolphin-2015-05-06/bin/dolphin-emu)
+#   1.91% VideoBackendHardware::Video_GatherPipeBursted (/opt/dolphin-2015-05-06/bin/dolphin-triforce)
 #   1.39% JIT_PPC_PSMTXConcat (/tmp/perf-15936.map)
 #   1.00% JIT_PPC_zz_051754c_ (/tmp/perf-15936.map)
 #   0.90% JIT_PPC_zz_051751c_ (/tmp/perf-15936.map)
@@ -25,7 +25,7 @@
 #
 # $ perf record --call-graph dwarf -t $tid
 # $ perf script | stackcollapse-perf.pl | sed 's/^CPU;//' |
-#     python Tools/symbolicate-ppc.py ~/.dolphin-emu/Maps/${map}.map |
+#     python Tools/symbolicate-ppc.py ~/.dolphin-triforce/Maps/${map}.map |
 #     perl -pe 's/^([^; ]*).*? ([0-9]+?)$/\1 \2/' | stackcollapse-recursive.pl |
 #     awk '{printf "%s %s\n", $2, $1}' | sort -rn | head
 # 5811 JIT_Loop

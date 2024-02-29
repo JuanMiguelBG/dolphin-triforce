@@ -1,6 +1,6 @@
-# Translation of dolphin-emu.pot to LANGUAGE
+# Translation of dolphin-triforce.pot to LANGUAGE
 # Copyright (C) 2003-2013
-# This file is distributed under the same license as the Dolphin Emulator package.
+# This file is distributed under the same license as the Dolphin Triforce Emulator package.
 #
 # Translators:
 # Allan Nordhøy <epost@anotheragency.no>, 2016-2018
@@ -16,7 +16,7 @@
 # d1fcc80a35d5442129c384ac221ef98f_d2a8fa7 <bf6c9fd43ceccaf85c00ef95eb21f12e_11704>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Dolphin Emulator\n"
+"Project-Id-Version: Dolphin Triforce Emulator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 08:59+0100\n"
 "PO-Revision-Date: 2013-01-23 13:48+0000\n"

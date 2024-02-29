@@ -1,4 +1,4 @@
-// Copyright 2014 Dolphin Emulator Project
+// Copyright 2014 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "UICommon/UICommon.h"
@@ -359,8 +359,8 @@ void SetUserDirectory(std::string custom_path)
     //    -> Use GetExeDirectory()/User
     // 2. $DOLPHIN_EMU_USERPATH is set
     //    -> Use $DOLPHIN_EMU_USERPATH
-    // 3. ~/.dolphin-emu directory exists
-    //    -> Use ~/.dolphin-emu
+    // 3. ~/.dolphin-triforce directory exists
+    //    -> Use ~/.dolphin-triforce
     // 4. Default
     //    -> Use XDG basedir, see
     //    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

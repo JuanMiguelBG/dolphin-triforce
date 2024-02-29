@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Common/MemArena.h"
@@ -64,7 +64,7 @@ MemArena::~MemArena() = default;
 
 void MemArena::GrabSHMSegment(size_t size)
 {
-  fd = AshmemCreateFileMapping(("dolphin-emu." + std::to_string(getpid())).c_str(), size);
+  fd = AshmemCreateFileMapping(("dolphin-triforce." + std::to_string(getpid())).c_str(), size);
   if (fd < 0)
     NOTICE_LOG_FMT(MEMMAP, "Ashmem allocation failed");
 }

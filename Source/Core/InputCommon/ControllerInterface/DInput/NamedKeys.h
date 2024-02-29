@@ -1,4 +1,4 @@
-// Copyright 2010 Dolphin Emulator Project
+// Copyright 2010 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 {DIK_A, "A"}, {DIK_B, "B"}, {DIK_C, "C"}, {DIK_D, "D"}, {DIK_E, "E"}, {DIK_F, "F"}, {DIK_G, "G"},

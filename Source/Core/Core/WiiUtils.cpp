@@ -1,4 +1,4 @@
-// Copyright 2017 Dolphin Emulator Project
+// Copyright 2017 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "Core/WiiUtils.h"
@@ -467,9 +467,9 @@ OnlineSystemUpdater::Response OnlineSystemUpdater::GetSystemTitles()
     // install along with URLs for the Wii U CDN.
 #ifdef ANDROID
     // HTTPS is unsupported on Android (https://bugs.dolphin-emu.org/issues/11772).
-    base_url = "http://fakenus.dolphin-emu.org";
+    base_url = "http://fakenus.dolphin-triforce.org";
 #else
-    base_url = "https://fakenus.dolphin-emu.org";
+    base_url = "https://fakenus.dolphin-triforce.org";
 #endif
   }
 

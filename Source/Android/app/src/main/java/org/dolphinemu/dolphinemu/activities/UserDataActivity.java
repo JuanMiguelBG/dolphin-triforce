@@ -301,7 +301,7 @@ public class UserDataActivity extends AppCompatActivity
   {
     Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
     intent.setType("application/zip");
-    intent.putExtra(Intent.EXTRA_TITLE, "dolphin-emu.zip");
+    intent.putExtra(Intent.EXTRA_TITLE, "dolphin-triforce.zip");
     startActivityForResult(intent, REQUEST_CODE_EXPORT);
   }
 

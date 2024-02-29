@@ -1,4 +1,4 @@
-// Copyright 2020 Dolphin Emulator Project
+// Copyright 2020 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 // IMPORTANT: UI etc should modify the value returned by FreeLook::GetConfig().

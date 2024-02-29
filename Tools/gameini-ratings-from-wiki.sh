@@ -8,8 +8,8 @@ fi
 [ -z "$PGPASSWORD" ] && read -rs -p 'Enter PostgreSQL password: ' PGPASSWORD
 
 export PGHOST=postgresql1.alwaysdata.com
-export PGDATABASE=dolphin-emu_wiki
-export PGUSER=dolphin-emu_wiki
+export PGDATABASE=dolphin-triforce_wiki
+export PGUSER=dolphin-triforce_wiki
 export PGPASSWORD
 
 sql() {

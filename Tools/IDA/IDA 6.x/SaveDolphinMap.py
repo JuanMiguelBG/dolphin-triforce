@@ -1,4 +1,4 @@
-# Copyright 2018 Dolphin Emulator Project
+# Copyright 2018 Dolphin Triforce Emulator Project
 # Licensed under GPLv2+
 # Refer to the LICENSES/GPL-2.0-or-later.txt file included.
 

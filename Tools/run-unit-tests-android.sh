@@ -5,7 +5,7 @@
 # The current working directory must contain test executables. Normally (for AArch64)
 # the working directory would be: Source/Android/app/.cxx/cmake/debug/arm64-v8a/Binaries/Tests
 
-DEVICE_DIR="/data/local/tmp/dolphin-emu-tests"
+DEVICE_DIR="/data/local/tmp/dolphin-triforce-tests"
 
 # Prevent MingW MSYS from being "smart" and turning the path above into a Windows-style path
 export MSYS_NO_PATHCONV=1

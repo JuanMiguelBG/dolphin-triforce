@@ -1,4 +1,4 @@
-// Copyright 2009 Dolphin Emulator Project
+// Copyright 2009 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <cstring>
@@ -64,7 +64,7 @@ bool PulseAudio::PulseInit()
   // changed
   m_pa_ml = pa_mainloop_new();
   m_pa_mlapi = pa_mainloop_get_api(m_pa_ml);
-  m_pa_ctx = pa_context_new(m_pa_mlapi, "dolphin-emu");
+  m_pa_ctx = pa_context_new(m_pa_mlapi, "dolphin-triforce");
   m_pa_error = pa_context_connect(m_pa_ctx, nullptr, PA_CONTEXT_NOFLAGS, nullptr);
   pa_context_set_state_callback(m_pa_ctx, StateCallback, this);
 

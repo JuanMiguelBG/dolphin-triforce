@@ -1,4 +1,4 @@
-// Copyright 2022 Dolphin Emulator Project
+// Copyright 2022 Dolphin Triforce Emulator Project
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 

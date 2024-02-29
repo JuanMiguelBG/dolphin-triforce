@@ -1,4 +1,4 @@
-// Copyright 2008 Dolphin Emulator Project
+// Copyright 2008 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 /*      $NetBSD: l2cap.h,v 1.9 2009/09/13 18:45:11 pooka Exp $  */

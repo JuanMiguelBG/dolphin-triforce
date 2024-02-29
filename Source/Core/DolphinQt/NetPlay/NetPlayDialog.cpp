@@ -1,4 +1,4 @@
-// Copyright 2017 Dolphin Emulator Project
+// Copyright 2017 Dolphin Triforce Emulator Project
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "DolphinQt/NetPlay/NetPlayDialog.h"
@@ -557,7 +557,7 @@ void NetPlayDialog::ResetExternalIP()
     // ENet does not support IPv6, so IPv4 has to be used
     request.UseIPv4();
     Common::HttpRequest::Response response =
-        request.Get("https://ip.dolphin-emu.org/", {{"X-Is-Dolphin", "1"}});
+        request.Get("https://ip.dolphin-triforce.org/", {{"X-Is-Dolphin", "1"}});
 
     if (response.has_value())
       return std::string(response->begin(), response->end());
