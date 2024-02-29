@@ -22,7 +22,7 @@
                 <string>wbfs</string>
             </array>
             <key>CFBundleTypeIconFile</key>
-            <string>Dolphin.icns</string>
+            <string>Dolphin-triforce.icns</string>
             <key>CFBundleTypeName</key>
             <string>Nintendo GC/Wii file</string>
             <key>CFBundleTypeRole</key>
@@ -32,7 +32,7 @@
     <key>CFBundleExecutable</key>
     <string>Dolphin</string>
     <key>CFBundleIconFile</key>
-    <string>Dolphin.icns</string>
+    <string>Dolphin-triforce.icns</string>
     <key>CFBundleIdentifier</key>
     <string>org.dolphin-triforce.dolphin</string>
     <key>CFBundleDevelopmentRegion</key>

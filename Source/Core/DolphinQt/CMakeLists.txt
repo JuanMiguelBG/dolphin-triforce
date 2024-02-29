@@ -551,8 +551,8 @@ if(APPLE)
   set_source_files_properties("${CMAKE_CURRENT_SOURCE_DIR}/qt.conf" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 
   # Copy icon into the bundle
-  target_sources(dolphin-triforce PRIVATE "${CMAKE_SOURCE_DIR}/Data/Dolphin.icns")
-  set_source_files_properties("${CMAKE_SOURCE_DIR}/Data/Dolphin.icns" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+  target_sources(dolphin-triforce PRIVATE "${CMAKE_SOURCE_DIR}/Data/Dolphin-triforce.icns")
+  set_source_files_properties("${CMAKE_SOURCE_DIR}/Data/Dolphin-triforce.icns" PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 
   # Plugins have to be manually included with Qt 6
   if (QT_VERSION_MAJOR EQUAL 6)

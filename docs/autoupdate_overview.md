@@ -20,7 +20,7 @@ update flow.
 * Updater (DolphinQt/Updater.h): Serves as the interface between AutoUpdateChecker and Qt.
     * Spawns a background thread when Dolphin launches that calls AutoUpdateChecker.
     * Creates the update prompt window when an update is available.
-    * If the user wants to update now, closes Dolphin.
+    * If the user wants to update now, closes Dolphin-triforce.
 * MacUpdater/main.m and MacUpdater/AppDelegate.mm: Entry point to MacOS updater.
     * Converts command line arguments to vector\<string\> and passes them to
       UpdaterCommon::RunUpdate().
@@ -73,7 +73,7 @@ update flow.
     * On Windows (starts wWinMain() in WinUpdater/Main.cpp):
          * Checks that the process received command line arguments. If not it tells the user the
            updater can't be launched directly and quits.
-         * Attempts to open Updater.log in the same directory as Dolphin.exe. If this fails,
+         * Attempts to open Updater.log in the same directory as Dolphin-triforce.exe. If this fails,
            checks to see if the process has admin privileges.
              * If not, attempts to relaunch the updater as admin. This will spawn a User Account
                Control prompt.
